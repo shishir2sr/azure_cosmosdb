@@ -92,7 +92,11 @@ class CosmosDbDatabases {
     try {
       return await open(name, permission: permission);
     } on NotFoundException {
-      return await create(name, permission: permission, throughput: throughput);
+      return await create(
+        name,
+        permission: permission,
+        throughput: CosmosDbThroughput.none(),
+      );
     }
   }
 }

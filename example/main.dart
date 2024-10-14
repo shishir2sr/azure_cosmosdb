@@ -16,7 +16,7 @@ void main() async {
   final cosmosDB = CosmosDbServer(cosmosDbUrl, masterKey: masterKey);
   final database = await cosmosDB.databases.openOrCreate(
     'ToDoDb',
-    throughput: CosmosDbThroughput.minimum,
+    throughput: CosmosDbThroughput.none(),
   );
   print('Database ready.');
 

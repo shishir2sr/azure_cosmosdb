@@ -20,7 +20,7 @@ void main() async {
       masterKey: masterKey, httpClient: DebugHttpClient());
   final database = await cosmosDB.databases.openOrCreate(
     'ToDoDb',
-    throughput: CosmosDbThroughput.minimum,
+    throughput: CosmosDbThroughput.none(),
   );
   print('Database ready.');
 

@@ -83,7 +83,7 @@ class CosmosDbContainers {
         Context(
           type: 'colls',
           resId: database.url,
-          headers: (throughput ?? CosmosDbThroughput.minimum).header,
+          headers: (throughput ?? CosmosDbThroughput.none()).header,
           builder: fromJson,
         ),
       );
@@ -112,7 +112,7 @@ class CosmosDbContainers {
         partitionKey: partitionKey,
         indexingPolicy: indexingPolicy,
         geospatialConfig: geospatialConfig,
-        throughput: throughput,
+        throughput: CosmosDbThroughput.none(),
       );
     }
   }
